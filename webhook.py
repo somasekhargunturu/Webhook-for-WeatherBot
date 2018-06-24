@@ -33,9 +33,10 @@ def webhook():
     return r
     
 def makeResponse(req):
+    log.debug("####### This has to print")
     for keys,values in req.items():
-        log.debug("Keys = "+ keys)
-        log.debug("Values = "+ values)
+        log.debug("####### Keys = "+ keys)
+        log.debug("####### Values = "+ values)
     #log.debug("###### req = " + req);
     result = req.get("result")
     log.debug("###### result = " + result);
