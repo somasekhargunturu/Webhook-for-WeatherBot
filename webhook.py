@@ -39,10 +39,10 @@ def makeResponse(req):
         logging.debug("####### Keys1 = "+ keys)
         
     #log.debug("###### req = " + req);
-    result = req.get("result")
+    result = req.get("queryResult")
     #logging.debug("###### result = " + result);
-    for keys,values in result.items():
-        logging.debug("####### Keys2 = "+ keys)
+    #for keys,values in result.items():
+        #logging.debug("####### Keys2 = "+ keys)
                       
     parameters = result.get("parameters")
     city = parameters.get("geo-city")
