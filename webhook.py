@@ -30,10 +30,11 @@ def webhook():
     
 def makeResponse(req):
     print(req)
+    Debug.Log("###### req = " + req);
     result = req.get("result")
+    Debug.Log("###### result = " + result);
     print(result)
-    req1 = result.get_json(silent=True, force=True)
-    parameters = req1.get("parameters")
+    parameters = result.get("parameters")
     city = parameters.get("geo-city")
     date = parameters.get("date")
 #    r = requests.get('http://api.openweathermap.org/data/2.5/forecast?q='+city+'&appid=d8942bef4f375f7d9d56e84cf5709cf5')
