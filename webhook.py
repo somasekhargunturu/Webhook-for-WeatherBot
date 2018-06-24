@@ -55,7 +55,7 @@ def makeResponse(req):
             condition = weather[i]['weather'][0]['description']
             break    
     
-    speech = "The forecast for"+city+ "for "+date+" is "+condition
+    speech = "The forecast for"+city+ "for "+date+" is "
     #speech = "The forecast for London is cloudy"
     return {
     "speech": speech,
