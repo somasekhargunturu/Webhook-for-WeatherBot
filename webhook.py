@@ -36,14 +36,14 @@ def webhook():
 def makeResponse(req):
     logging.debug("####### This has to print")
     for keys,values in req.items():
-        logging.debug("####### Keys = "+ keys)
-        for keys1,values1 in values.items():
-            logging.debug("####### keys1 = "+ keys1)
-            logging.debug("####### values1 = "+ values1)          
+        logging.debug("####### Keys1 = "+ keys)
+        
     #log.debug("###### req = " + req);
     result = req.get("result")
-    log.debug("###### result = " + result);
-    print(result)
+    logging.debug("###### result = " + result);
+    for keys,values in result.items():
+        logging.debug("####### Keys2 = "+ keys)
+                      
     parameters = result.get("parameters")
     city = parameters.get("geo-city")
     date = parameters.get("date")
