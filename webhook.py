@@ -8,10 +8,14 @@ Created on Sat Jun 23 20:56:10 2018
 import json
 import os
 import requests
+import logging
 
 from flask import Flask
 from flask import request
 from flask import make_response
+
+logging.basicConfig(level=logging.DEBUG)
+log=logging.getLogger('=>')  
 
 #Flask app should start in global layout
 app = Flask(__name__)
@@ -30,9 +34,9 @@ def webhook():
     
 def makeResponse(req):
     print(req)
-    Debug.Log("###### req = " + req);
+    log.debug("###### req = " + req);
     result = req.get("result")
-    Debug.Log("###### result = " + result);
+    log.debug("###### result = " + result);
     print(result)
     parameters = result.get("parameters")
     city = parameters.get("geo-city")
