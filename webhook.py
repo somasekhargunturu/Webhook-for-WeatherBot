@@ -40,7 +40,7 @@ def makeResponse(req):
         
     #log.debug("###### req = " + req);
     result = req.get("result")
-    logging.debug("###### result = " + result);
+    #logging.debug("###### result = " + result);
     for keys,values in result.items():
         logging.debug("####### Keys2 = "+ keys)
                       
