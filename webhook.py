@@ -8,14 +8,15 @@ Created on Sat Jun 23 20:56:10 2018
 import json
 import os
 import requests
-import logging
+
 
 from flask import Flask
 from flask import request
 from flask import make_response
 
-logging.basicConfig(level=logging.DEBUG)
-log=logging.getLogger('=>')  
+import logging
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.debug('##### This is a log message.')
 
 #Flask app should start in global layout
 app = Flask(__name__)
@@ -33,10 +34,12 @@ def webhook():
     return r
     
 def makeResponse(req):
-    log.debug("####### This has to print")
+    logging.debug("####### This has to print")
     for keys,values in req.items():
-        log.debug("####### Keys = "+ keys)
-        log.debug("####### Values = "+ values)
+        logging.debug("####### Keys = "+ keys)
+        for keys1,values1 in values.items():
+            logging.debug("####### keys1 = "+ keys1)
+            logging.debug("####### values1 = "+ values1)          
     #log.debug("###### req = " + req);
     result = req.get("result")
     log.debug("###### result = " + result);
